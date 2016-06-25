@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svnroot/embunity/!svn/ver/75/trunk
+END
+iar_msp430.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svnroot/embunity/!svn/ver/65/trunk/iar_msp430.yml
+END
+iar_arm_v4.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svnroot/embunity/!svn/ver/65/trunk/iar_arm_v4.yml
+END
+rakefile_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/embunity/!svn/ver/70/trunk/rakefile_helper.rb
+END
+iar_arm_v5.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svnroot/embunity/!svn/ver/65/trunk/iar_arm_v5.yml
+END
+rakefile.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/embunity/!svn/ver/70/trunk/rakefile.rb
+END
+gcc.yml
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svnroot/embunity/!svn/ver/65/trunk/gcc.yml
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/embunity/!svn/ver/70/trunk/makefile
+END

@@ -1,0 +1,73 @@
+\hypertarget{_n_f_c_host_8c}{
+\section{/Users/fox/Projects/NFC/Code/firmware/src/NFCHost.c File Reference}
+\label{_n_f_c_host_8c}\index{/Users/fox/Projects/NFC/Code/firmware/src/NFCHost.c@{/Users/fox/Projects/NFC/Code/firmware/src/NFCHost.c}}
+}
+{\ttfamily \#include \char`\"{}NFC.h\char`\"{}}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_n_f_c_host_8c_a7d467c1d283fdfa1f2081ba1e0d01b6e}{
+\#define {\bfseries PAGE\_\-SIZE}~2048}
+\label{_n_f_c_host_8c_a7d467c1d283fdfa1f2081ba1e0d01b6e}
+
+\item 
+\hypertarget{_n_f_c_host_8c_ac1a7ceca1ee1655830e8f2df4c98ab08}{
+\#define {\bfseries TOTAL\_\-PAGES}~2097152ul}
+\label{_n_f_c_host_8c_ac1a7ceca1ee1655830e8f2df4c98ab08}
+
+\item 
+\hypertarget{_n_f_c_host_8c_a2a5c15a83b4f59a369d7c12900c63eb2}{
+\#define {\bfseries PAGES\_\-PER\_\-BLOCK}~64}
+\label{_n_f_c_host_8c_a2a5c15a83b4f59a369d7c12900c63eb2}
+
+\item 
+\hypertarget{_n_f_c_host_8c_a4f417489d9c3c243405dffcd9e29c218}{
+\#define {\bfseries TOTAL\_\-BYTES}~(PAGE\_\-SIZE $\ast$ TOTAL\_\-PAGES)}
+\label{_n_f_c_host_8c_a4f417489d9c3c243405dffcd9e29c218}
+
+\item 
+\hypertarget{_n_f_c_host_8c_a5559d5e7ba501e9762af5f203035df14}{
+\#define {\bfseries TOTAL\_\-BLOCKS}~(TOTAL\_\-PAGES / PAGES\_\-PER\_\-BLOCK)}
+\label{_n_f_c_host_8c_a5559d5e7ba501e9762af5f203035df14}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_n_f_c_host_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}{NFC\_\-init} (void)
+\item 
+\hypertarget{_n_f_c_host_8c_a980a4be25c6478bf8f9d82e2b01cfb53}{
+void {\bfseries NFC\_\-command} (uint32\_\-t x)}
+\label{_n_f_c_host_8c_a980a4be25c6478bf8f9d82e2b01cfb53}
+
+\item 
+\hypertarget{_n_f_c_host_8c_add029e0345bee5793c5445e6db83aaf3}{
+void {\bfseries NFC\_\-wait\_\-icff} (uint8\_\-t cnt)}
+\label{_n_f_c_host_8c_add029e0345bee5793c5445e6db83aaf3}
+
+\item 
+\hypertarget{_n_f_c_host_8c_a403eb7619cf51619ecbfa9f2f440f31e}{
+uint8\_\-t {\bfseries NFC\_\-read\_\-icff} (void)}
+\label{_n_f_c_host_8c_a403eb7619cf51619ecbfa9f2f440f31e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:fox.chao@gmail.com}{\tt fox.chao@gmail.com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{_n_f_c_host_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}{
+\index{NFCHost.c@{NFCHost.c}!NFC\_\-init@{NFC\_\-init}}
+\index{NFC\_\-init@{NFC\_\-init}!NFCHost.c@{NFCHost.c}}
+\subsubsection[{NFC\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void NFC\_\-init (void)}}
+\label{_n_f_c_host_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}
+NFC\_\-init
+
+open and grow the simulated target files if necessary. 

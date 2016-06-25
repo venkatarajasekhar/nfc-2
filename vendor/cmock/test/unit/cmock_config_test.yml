@@ -1,0 +1,5 @@
+:cmock:
+  :plugins:
+    - 'soda'
+    - 'pizza'
+  :cexception_include: 'MySillyException.h'

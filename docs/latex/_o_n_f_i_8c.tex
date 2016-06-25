@@ -1,0 +1,438 @@
+\hypertarget{_o_n_f_i_8c}{
+\section{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/ONFI.c File Reference}
+\label{_o_n_f_i_8c}\index{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/ONFI.c@{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/ONFI.c}}
+}
+{\ttfamily \#include \char`\"{}ONFI.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}NFC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ONFI\_\-timing.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_o_n_f_i_8c_a3d90b746b12f0d88078cff54b3f2dd68}{SR\_\-WPn}~7
+\item 
+\hypertarget{_o_n_f_i_8c_aa470159e3bceef3f77dabf65cf3d8e9a}{
+\#define {\bfseries SR\_\-RDY}~6}
+\label{_o_n_f_i_8c_aa470159e3bceef3f77dabf65cf3d8e9a}
+
+\item 
+\hypertarget{_o_n_f_i_8c_afb864e79378ff7bb9b69ec36c108a582}{
+\#define {\bfseries SR\_\-ARDY}~5}
+\label{_o_n_f_i_8c_afb864e79378ff7bb9b69ec36c108a582}
+
+\item 
+\hypertarget{_o_n_f_i_8c_aedb1bc39ef95b66df76d7f4f61dbe14c}{
+\#define {\bfseries SR\_\-VSP}~4}
+\label{_o_n_f_i_8c_aedb1bc39ef95b66df76d7f4f61dbe14c}
+
+\item 
+\hypertarget{_o_n_f_i_8c_a6c0e0f307403eccb6d57452bc51fdf66}{
+\#define {\bfseries SR\_\-FAILC}~1}
+\label{_o_n_f_i_8c_a6c0e0f307403eccb6d57452bc51fdf66}
+
+\item 
+\hypertarget{_o_n_f_i_8c_a7d4ae48d5af33a336f224bebbd3327d2}{
+\#define {\bfseries SR\_\-FAIL}~0}
+\label{_o_n_f_i_8c_a7d4ae48d5af33a336f224bebbd3327d2}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_o_n_f_i_8c_a914ee49eec8a92288444017fda08e0c9}{ONFI\_\-Reset} (void)
+\item 
+void \hyperlink{_o_n_f_i_8c_ae04e986bba6f18e203c6ad3fe6a71934}{ONFI\_\-SynchronousReset} (void)
+\item 
+void \hyperlink{_o_n_f_i_8c_ad8e8a9249903e64771113948f4be13fe}{ONFI\_\-ReadID} (uint8\_\-t addr)
+\item 
+void \hyperlink{_o_n_f_i_8c_a6dd8ac555e8f9a53776e2cac0e0e8926}{ONFI\_\-ReadParameterPage} (uint8\_\-t addr)
+\item 
+void \hyperlink{_o_n_f_i_8c_a259b4ac1c33deec23ebcae4e8046bebd}{ONFI\_\-ReadUniqueID} (uint8\_\-t addr)
+\item 
+void \hyperlink{_o_n_f_i_8c_a1754f07e66de3cbf6921d36433f06208}{ONFI\_\-SetFeatures} (uint8\_\-t addr, uint32\_\-t param)
+\item 
+void \hyperlink{_o_n_f_i_8c_a074d1f93ea2b27aa8260ae7070e4cbe3}{ONFI\_\-GetFeatures} (uint8\_\-t addr)
+\item 
+uint16\_\-t \hyperlink{_o_n_f_i_8c_a3ffa8815eae7157321971476be631ac8}{ONFI\_\-ReadStatus} (void)
+\item 
+uint16\_\-t \hyperlink{_o_n_f_i_8c_af7c3e6ae10efcd05241ec138e3f4355c}{ONFI\_\-SelectLunWithStatus} (uint32\_\-t addr)
+\item 
+void \hyperlink{_o_n_f_i_8c_adfe69f1092a01fc5e198eb074e595480}{ONFI\_\-ChangeReadColumn} (uint16\_\-t addr)
+\item 
+void \hyperlink{_o_n_f_i_8c_a7f0b37ad4e2ff45cda2c5bde124c2fc8}{ONFI\_\-SelectCacheRegister} (uint32\_\-t rowaddr, uint16\_\-t coladdr)
+\item 
+void \hyperlink{_o_n_f_i_8c_a5f76c7f26706b9839222f7bc2a1a03e2}{ONFI\_\-ChangeWriteColumn} (uint16\_\-t addr)
+\item 
+void \hyperlink{_o_n_f_i_8c_a0d4f9c76abfa683d8ae1cd9d081c2eca}{ONFI\_\-ChangeRowAddress} (uint32\_\-t rowaddr, uint16\_\-t coladdr)
+\item 
+void \hyperlink{_o_n_f_i_8c_a6592521b5cc3c98c8bfbe46a99793856}{ONFI\_\-ReadMode} (void)
+\item 
+void \hyperlink{_o_n_f_i_8c_a4d442c37e804bcb270869d0440c1298b}{ONFI\_\-ReadPage} (uint32\_\-t rowaddr, uint16\_\-t coladdr)
+\item 
+\hypertarget{_o_n_f_i_8c_a11db49670ae590b6a8059877600de291}{
+void {\bfseries ONFI\_\-ReadCacheSequential} (void)}
+\label{_o_n_f_i_8c_a11db49670ae590b6a8059877600de291}
+
+\item 
+void \hyperlink{_o_n_f_i_8c_a1cdd8db3542dc56f1980fd0bf44e8e0e}{ONFI\_\-ReadPageCacheRandom} (uint32\_\-t rowaddr, uint16\_\-t coladdr)
+\item 
+void \hyperlink{_o_n_f_i_8c_a389bd65b1cfad6d4f35968085ca3e87a}{ONFI\_\-ReadCacheLast} (void)
+\item 
+void \hyperlink{_o_n_f_i_8c_a62835ebb8d4cc6a3e69f9c256966c756}{ONFI\_\-ProgramPage} (uint32\_\-t rowaddr, uint16\_\-t coladdr)
+\item 
+\hypertarget{_o_n_f_i_8c_a05949c5c3242e228049f4870f84ad96c}{
+void {\bfseries ONFI\_\-ProgramPage\_\-end} (void)}
+\label{_o_n_f_i_8c_a05949c5c3242e228049f4870f84ad96c}
+
+\item 
+\hypertarget{_o_n_f_i_8c_a0f5fc26188ded059a9d25779e78cc90a}{
+void {\bfseries ONFI\_\-ProgramPageInterleaved} (void)}
+\label{_o_n_f_i_8c_a0f5fc26188ded059a9d25779e78cc90a}
+
+\item 
+\hypertarget{_o_n_f_i_8c_ab77f6014a99deca8c0c54f2545a08bb3}{
+void {\bfseries ONFI\_\-PageCacheProgram} (void)}
+\label{_o_n_f_i_8c_ab77f6014a99deca8c0c54f2545a08bb3}
+
+\item 
+void \hyperlink{_o_n_f_i_8c_a5b8a3dd6d1d0c2f3588f683cc2cc4e8f}{ONFI\_\-EraseBlock} (uint32\_\-t addr)
+\item 
+void \hyperlink{_o_n_f_i_8c_abfc364600cbee03cf557da4d6c356ed3}{ONFI\_\-EraseBlockMultiPlane} (uint32\_\-t addr)
+\item 
+void \hyperlink{_o_n_f_i_8c_afc822991c30fce6465b4ee66eaf91214}{ONFI\_\-CopybackRead} (uint32\_\-t rowaddr, uint16\_\-t coladdr, uint32\_\-t cnt)
+\item 
+\hypertarget{_o_n_f_i_8c_aeb2a344a6fd57334e39aec3edfc76170}{
+void {\bfseries ONFI\_\-CopybackProgramInterleaved} (void)}
+\label{_o_n_f_i_8c_aeb2a344a6fd57334e39aec3edfc76170}
+
+\item 
+void \hyperlink{_o_n_f_i_8c_a1503b4ec6c2e507568eaf1228d20c75f}{ONFI\_\-receive8} (uint8\_\-t $\ast$buff, int32\_\-t cnt)
+\item 
+void \hyperlink{_o_n_f_i_8c_a88cd8666654cdba7081565fd13caa734}{ONFI\_\-receive16} (uint16\_\-t $\ast$buff, int32\_\-t cnt)
+\item 
+void \hyperlink{_o_n_f_i_8c_a72c7cbac83a92d89de42d26fc6407b58}{ONFI\_\-dma\_\-read} (int32\_\-t cnt, uint32\_\-t flag)
+\item 
+void \hyperlink{_o_n_f_i_8c_ab179f6253a31ecff07b9010f37fd021b}{ONFI\_\-dma\_\-write} (int32\_\-t cnt, uint32\_\-t flag)
+\item 
+void \hyperlink{_o_n_f_i_8c_afe9b67d85e32870a02133365c072014a}{ONFI\_\-set\_\-speed} (uint8\_\-t speed)
+\item 
+int \hyperlink{_o_n_f_i_8c_ad3595079f8bb124a3a3820c735805fd8}{ONFI\_\-init} (uint8\_\-t mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:fox.chao@gmail.com}{\tt fox.chao@gmail.com} 
+\end{DoxyAuthor}
+
+
+\subsection{Define Documentation}
+\hypertarget{_o_n_f_i_8c_a3d90b746b12f0d88078cff54b3f2dd68}{
+\index{ONFI.c@{ONFI.c}!SR\_\-WPn@{SR\_\-WPn}}
+\index{SR\_\-WPn@{SR\_\-WPn}!ONFI.c@{ONFI.c}}
+\subsubsection[{SR\_\-WPn}]{\setlength{\rightskip}{0pt plus 5cm}\#define SR\_\-WPn~7}}
+\label{_o_n_f_i_8c_a3d90b746b12f0d88078cff54b3f2dd68}
+ONFI status
+
+
+\begin{DoxyPre}
+  [7] WP\#  - If set to one, then the device is not write protected.
+  [6] RDY  - If set to one, then the LUN or interleaved address is ready for
+              another command and all other bits in the status value are
+              valid.
+  [5] ARDY - If set to one, then there is no array operation in progress.
+  [4] VSP  - Vendor Specific
+  [3] R
+  [2] R
+  [1] FAILC - If set to one, then the command issued prior to the last
+               command failed.
+  [0] FAIL  - If set to one, then the last command failed.
+ \end{DoxyPre}
+ 
+
+\subsection{Function Documentation}
+\hypertarget{_o_n_f_i_8c_adfe69f1092a01fc5e198eb074e595480}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ChangeReadColumn@{ONFI\_\-ChangeReadColumn}}
+\index{ONFI\_\-ChangeReadColumn@{ONFI\_\-ChangeReadColumn}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ChangeReadColumn}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ChangeReadColumn (
+\begin{DoxyParamCaption}
+\item[{uint16\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_adfe69f1092a01fc5e198eb074e595480}
+ONFI\_\-ChangeReadColumn function changes the column address of the selected cache register and enables data output from the last selected LUN. \hypertarget{_o_n_f_i_8c_a0d4f9c76abfa683d8ae1cd9d081c2eca}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ChangeRowAddress@{ONFI\_\-ChangeRowAddress}}
+\index{ONFI\_\-ChangeRowAddress@{ONFI\_\-ChangeRowAddress}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ChangeRowAddress}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ChangeRowAddress (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ rowaddr, }
+\item[{uint16\_\-t}]{ coladdr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a0d4f9c76abfa683d8ae1cd9d081c2eca}
+ONFI\_\-ChangeRowAddress function changes the row address (block and page) where the cache register contents will be programmed in the NAND Flash array. It also changes the column address of the selected cache register and enables data input on the specified LUN. \hypertarget{_o_n_f_i_8c_a5f76c7f26706b9839222f7bc2a1a03e2}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ChangeWriteColumn@{ONFI\_\-ChangeWriteColumn}}
+\index{ONFI\_\-ChangeWriteColumn@{ONFI\_\-ChangeWriteColumn}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ChangeWriteColumn}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ChangeWriteColumn (
+\begin{DoxyParamCaption}
+\item[{uint16\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a5f76c7f26706b9839222f7bc2a1a03e2}
+ONFI\_\-ChangeWriteColumn function changes the column address of the selected cache register and enables data input on the last-\/selected LUN. \hypertarget{_o_n_f_i_8c_afc822991c30fce6465b4ee66eaf91214}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-CopybackRead@{ONFI\_\-CopybackRead}}
+\index{ONFI\_\-CopybackRead@{ONFI\_\-CopybackRead}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-CopybackRead}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-CopybackRead (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ rowaddr, }
+\item[{uint16\_\-t}]{ coladdr, }
+\item[{uint32\_\-t}]{ n}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_afc822991c30fce6465b4ee66eaf91214}
+ONFI\_\-CopybackRead function reads a page of data from one location and then moves that data to a second location on the same LUN. \hypertarget{_o_n_f_i_8c_a72c7cbac83a92d89de42d26fc6407b58}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-dma\_\-read@{ONFI\_\-dma\_\-read}}
+\index{ONFI\_\-dma\_\-read@{ONFI\_\-dma\_\-read}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-dma\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-dma\_\-read (
+\begin{DoxyParamCaption}
+\item[{int32\_\-t}]{ cnt, }
+\item[{uint32\_\-t}]{ flag}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a72c7cbac83a92d89de42d26fc6407b58}
+ONFI\_\-dma\_\-read(cnt, flag) \hypertarget{_o_n_f_i_8c_ab179f6253a31ecff07b9010f37fd021b}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-dma\_\-write@{ONFI\_\-dma\_\-write}}
+\index{ONFI\_\-dma\_\-write@{ONFI\_\-dma\_\-write}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-dma\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-dma\_\-write (
+\begin{DoxyParamCaption}
+\item[{int32\_\-t}]{ cnt, }
+\item[{uint32\_\-t}]{ flag}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_ab179f6253a31ecff07b9010f37fd021b}
+ONFI\_\-dma\_\-write(cnt, flag) \hypertarget{_o_n_f_i_8c_a5b8a3dd6d1d0c2f3588f683cc2cc4e8f}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-EraseBlock@{ONFI\_\-EraseBlock}}
+\index{ONFI\_\-EraseBlock@{ONFI\_\-EraseBlock}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-EraseBlock}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-EraseBlock (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a5b8a3dd6d1d0c2f3588f683cc2cc4e8f}
+ONFI\_\-EraseBlock function erases the specified block in the NAND Flash array . This command is accepted by the LUN when it is ready (RDY = 1, ARDY = 1). \hypertarget{_o_n_f_i_8c_abfc364600cbee03cf557da4d6c356ed3}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-EraseBlockMultiPlane@{ONFI\_\-EraseBlockMultiPlane}}
+\index{ONFI\_\-EraseBlockMultiPlane@{ONFI\_\-EraseBlockMultiPlane}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-EraseBlockMultiPlane}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-EraseBlockMultiPlane (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_abfc364600cbee03cf557da4d6c356ed3}
+ONFI\_\-EraseBlock(addr) queues a block in the specified plane to be erased in the NAND Flash array. \hypertarget{_o_n_f_i_8c_a074d1f93ea2b27aa8260ae7070e4cbe3}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-GetFeatures@{ONFI\_\-GetFeatures}}
+\index{ONFI\_\-GetFeatures@{ONFI\_\-GetFeatures}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-GetFeatures}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-GetFeatures (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a074d1f93ea2b27aa8260ae7070e4cbe3}
+ONFI\_\-GetFeatures function reads the sub-\/feature parameters (P1-\/P4) from the specified feature address. This command is accepted by the target only when all LUNs on the target are idle.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]1 byte address \end{DoxyParams}
+\hypertarget{_o_n_f_i_8c_ad3595079f8bb124a3a3820c735805fd8}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-init@{ONFI\_\-init}}
+\index{ONFI\_\-init@{ONFI\_\-init}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ONFI\_\-init (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{ mode}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_ad3595079f8bb124a3a3820c735805fd8}
+\hyperlink{_o_n_f_i_8c_ad3595079f8bb124a3a3820c735805fd8}{ONFI\_\-init()} \hypertarget{_o_n_f_i_8c_a62835ebb8d4cc6a3e69f9c256966c756}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ProgramPage@{ONFI\_\-ProgramPage}}
+\index{ONFI\_\-ProgramPage@{ONFI\_\-ProgramPage}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ProgramPage}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ProgramPage (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ rowaddr, }
+\item[{uint16\_\-t}]{ coladdr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a62835ebb8d4cc6a3e69f9c256966c756}
+ONFI\_\-ProgramPage function transfers a page or portion of a page of data identified by a column address to the page register. \hypertarget{_o_n_f_i_8c_a389bd65b1cfad6d4f35968085ca3e87a}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ReadCacheLast@{ONFI\_\-ReadCacheLast}}
+\index{ONFI\_\-ReadCacheLast@{ONFI\_\-ReadCacheLast}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ReadCacheLast}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ReadCacheLast (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a389bd65b1cfad6d4f35968085ca3e87a}
+ONFI\_\-ReadCacheLast function ends the READ PAGE CACHE sequence and copies a page from the data register to the cache register. \hypertarget{_o_n_f_i_8c_ad8e8a9249903e64771113948f4be13fe}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ReadID@{ONFI\_\-ReadID}}
+\index{ONFI\_\-ReadID@{ONFI\_\-ReadID}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ReadID}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ReadID (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_ad8e8a9249903e64771113948f4be13fe}
+ONFI\_\-ReadID function identifies that the target supports the ONFI specification. For the Read ID command, only addresses of 00h and 20h are valid.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]1 byte address \end{DoxyParams}
+\hypertarget{_o_n_f_i_8c_a6592521b5cc3c98c8bfbe46a99793856}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ReadMode@{ONFI\_\-ReadMode}}
+\index{ONFI\_\-ReadMode@{ONFI\_\-ReadMode}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ReadMode}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ReadMode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a6592521b5cc3c98c8bfbe46a99793856}
+ONFI\_\-ReadMode function reads a page of data identified by a row address for the LUN specified. \hypertarget{_o_n_f_i_8c_a4d442c37e804bcb270869d0440c1298b}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ReadPage@{ONFI\_\-ReadPage}}
+\index{ONFI\_\-ReadPage@{ONFI\_\-ReadPage}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ReadPage}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ReadPage (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ rowaddr, }
+\item[{uint16\_\-t}]{ coladdr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a4d442c37e804bcb270869d0440c1298b}
+ONFI\_\-ReadPage function copies a page from the NAND Flash array to its respective cache register and enables data output. \hypertarget{_o_n_f_i_8c_a1cdd8db3542dc56f1980fd0bf44e8e0e}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ReadPageCacheRandom@{ONFI\_\-ReadPageCacheRandom}}
+\index{ONFI\_\-ReadPageCacheRandom@{ONFI\_\-ReadPageCacheRandom}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ReadPageCacheRandom}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ReadPageCacheRandom (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ rowaddr, }
+\item[{uint16\_\-t}]{ coladdr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a1cdd8db3542dc56f1980fd0bf44e8e0e}
+ONFI\_\-ReadPageCacheRandom function reads the specified block and page into the data register while the previous page is output from the cache register. \hypertarget{_o_n_f_i_8c_a6dd8ac555e8f9a53776e2cac0e0e8926}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ReadParameterPage@{ONFI\_\-ReadParameterPage}}
+\index{ONFI\_\-ReadParameterPage@{ONFI\_\-ReadParameterPage}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ReadParameterPage}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ReadParameterPage (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a6dd8ac555e8f9a53776e2cac0e0e8926}
+ONFI\_\-ReadParameterPage function retrieves the data structure that describes the target’s organization, features, timings and other behavioral parameters.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]1 byte address \end{DoxyParams}
+\hypertarget{_o_n_f_i_8c_a3ffa8815eae7157321971476be631ac8}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ReadStatus@{ONFI\_\-ReadStatus}}
+\index{ONFI\_\-ReadStatus@{ONFI\_\-ReadStatus}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ReadStatus}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t ONFI\_\-ReadStatus (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a3ffa8815eae7157321971476be631ac8}
+ONFI\_\-ReadStatus function returns the status of the last-\/selected LUN on a target. In the case of non-\/interleaved operations, the Read Status function retrieves a status value for the last operation issued. \hypertarget{_o_n_f_i_8c_a259b4ac1c33deec23ebcae4e8046bebd}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-ReadUniqueID@{ONFI\_\-ReadUniqueID}}
+\index{ONFI\_\-ReadUniqueID@{ONFI\_\-ReadUniqueID}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-ReadUniqueID}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-ReadUniqueID (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a259b4ac1c33deec23ebcae4e8046bebd}
+ONFI\_\-ReadUniqueID function is used to retrieve the 16 byte unique ID (UID) for the device. The unique ID when combined with the device manufacturer shall be unique.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]1 byte address \end{DoxyParams}
+\hypertarget{_o_n_f_i_8c_a88cd8666654cdba7081565fd13caa734}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-receive16@{ONFI\_\-receive16}}
+\index{ONFI\_\-receive16@{ONFI\_\-receive16}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-receive16}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-receive16 (
+\begin{DoxyParamCaption}
+\item[{uint16\_\-t $\ast$}]{ buff, }
+\item[{int32\_\-t}]{ cnt}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a88cd8666654cdba7081565fd13caa734}
+ONFI\_\-receive function receives data via FMICFF using a 16-\/bit buffer. \hypertarget{_o_n_f_i_8c_a1503b4ec6c2e507568eaf1228d20c75f}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-receive8@{ONFI\_\-receive8}}
+\index{ONFI\_\-receive8@{ONFI\_\-receive8}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-receive8}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-receive8 (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t $\ast$}]{ buff, }
+\item[{int32\_\-t}]{ cnt}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a1503b4ec6c2e507568eaf1228d20c75f}
+ONFI\_\-receive function receives data via FMICFF using a 16-\/bit buffer. \hypertarget{_o_n_f_i_8c_a914ee49eec8a92288444017fda08e0c9}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-Reset@{ONFI\_\-Reset}}
+\index{ONFI\_\-Reset@{ONFI\_\-Reset}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-Reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a914ee49eec8a92288444017fda08e0c9}
+ONFI\_\-Reset function is used to put a target into a known condition and to abort command sequences in progress. \hypertarget{_o_n_f_i_8c_a7f0b37ad4e2ff45cda2c5bde124c2fc8}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-SelectCacheRegister@{ONFI\_\-SelectCacheRegister}}
+\index{ONFI\_\-SelectCacheRegister@{ONFI\_\-SelectCacheRegister}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-SelectCacheRegister}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-SelectCacheRegister (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ rowaddr, }
+\item[{uint16\_\-t}]{ coladdr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a7f0b37ad4e2ff45cda2c5bde124c2fc8}
+ONFI\_\-SelectCacheRegister function enables data output on the addressed LUN’s cache register at the specified column address. \hypertarget{_o_n_f_i_8c_af7c3e6ae10efcd05241ec138e3f4355c}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-SelectLunWithStatus@{ONFI\_\-SelectLunWithStatus}}
+\index{ONFI\_\-SelectLunWithStatus@{ONFI\_\-SelectLunWithStatus}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-SelectLunWithStatus}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t ONFI\_\-SelectLunWithStatus (
+\begin{DoxyParamCaption}
+\item[{uint32\_\-t}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_af7c3e6ae10efcd05241ec138e3f4355c}
+ONFI\_\-SelectLunWithStatus function returns the status of the addressed LUN on a target even when it is busy (RDY = 0). \hypertarget{_o_n_f_i_8c_afe9b67d85e32870a02133365c072014a}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-set\_\-speed@{ONFI\_\-set\_\-speed}}
+\index{ONFI\_\-set\_\-speed@{ONFI\_\-set\_\-speed}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-set\_\-speed}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-set\_\-speed (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{ speed}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_afe9b67d85e32870a02133365c072014a}
+ONFI\_\-set\_\-speed(speed)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em speed}]new speed mode \end{DoxyParams}
+\hypertarget{_o_n_f_i_8c_a1754f07e66de3cbf6921d36433f06208}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-SetFeatures@{ONFI\_\-SetFeatures}}
+\index{ONFI\_\-SetFeatures@{ONFI\_\-SetFeatures}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-SetFeatures}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-SetFeatures (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{ addr, }
+\item[{uint32\_\-t}]{ param}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_a1754f07e66de3cbf6921d36433f06208}
+ONFI\_\-SetFeatures function writes the sub-\/feature parameters (P1-\/P4) to the specified feature address to enable or disable target-\/specific features. This command is accepted by the target only when all LUNs on the target are idle.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]1 byte address \item[{\em param}]32-\/bit parameter \end{DoxyParams}
+\hypertarget{_o_n_f_i_8c_ae04e986bba6f18e203c6ad3fe6a71934}{
+\index{ONFI.c@{ONFI.c}!ONFI\_\-SynchronousReset@{ONFI\_\-SynchronousReset}}
+\index{ONFI\_\-SynchronousReset@{ONFI\_\-SynchronousReset}!ONFI.c@{ONFI.c}}
+\subsubsection[{ONFI\_\-SynchronousReset}]{\setlength{\rightskip}{0pt plus 5cm}void ONFI\_\-SynchronousReset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_o_n_f_i_8c_ae04e986bba6f18e203c6ad3fe6a71934}
+ONFI\_\-SynchronousReset function resets the target and all LUNs. 

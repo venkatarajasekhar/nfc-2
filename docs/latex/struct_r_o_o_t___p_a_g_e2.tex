@@ -1,0 +1,28 @@
+\hypertarget{struct_r_o_o_t___p_a_g_e2}{
+\section{ROOT\_\-PAGE2 Struct Reference}
+\label{struct_r_o_o_t___p_a_g_e2}\index{ROOT\_\-PAGE2@{ROOT\_\-PAGE2}}
+}
+
+
+{\ttfamily \#include $<$control.h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct_r_o_o_t___p_a_g_e2_a18636f64ee53577ed27a86d89290ee91}{
+char CSPACE\_\-START char {\bfseries CSPACE\_\-END}}
+\label{struct_r_o_o_t___p_a_g_e2_a18636f64ee53577ed27a86d89290ee91}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+ROOT Area Block 0 page 0 0 to 511 byte + ECC byte -\/ Bad block information for block 0 to 4K blocks (0 = bad block, 1 = good block) with ECC protection. repeat for earch 4K blocks. It will fill with 0 for non-\/existing flash blocks. 4k byte to 8kbyte space will not be used (for possible 4k/page configuration) Block 0 page 1 0 to 4kbyte + 8xECC byte This will fill with 0 with ECC protection for non-\/existing flash block. 4k byte to 8kbyte space will not be used (for possible 4k/page configuration) Block 0 page 2 Flash parameter, flash configuration and etc. CSPACE start block address = 2 CSPACE end block address = 47 CSPACE bad block list: block address offset1, block address offset2, .., block address offset N (in ascending order), 0xff(end indicator) This page content is ECC protected.
+
+Block 1 page 0, page 1, page 2 Duplicate of block 0, page 0, page 1, page 2
+
+Block 0x3FFF (0x1FFF or 0x0FFF) page 0, page 1, page 2 Duplicate of block 0, page 0, page 1, page 2 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/fox/Projects/NFC/Code/firmware/include/control.h\end{DoxyCompactItemize}

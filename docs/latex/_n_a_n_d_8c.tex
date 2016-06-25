@@ -1,0 +1,72 @@
+\hypertarget{_n_a_n_d_8c}{
+\section{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/NAND.c File Reference}
+\label{_n_a_n_d_8c}\index{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/NAND.c@{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/NAND.c}}
+}
+{\ttfamily \#include \char`\"{}NAND.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}NFC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}crypto.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_n_a_n_d_8c_a1cd2b3355a11ab00c6b5b1db10d84698}{NAND\_\-read\_\-request} (int start, int cnt)
+\item 
+int \hyperlink{_n_a_n_d_8c_a2126a181f18ba373e0d90cd2b8559eec}{NAND\_\-write\_\-request} (int start, int cnt)
+\item 
+\hypertarget{_n_a_n_d_8c_a20a43e6f13f8528d4c693695af14ca69}{
+int {\bfseries NAND\_\-poll} (int handle)}
+\label{_n_a_n_d_8c_a20a43e6f13f8528d4c693695af14ca69}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_n_a_n_d_8c_a50c6eb94ac4729e14e77e1234e9e7d80}{
+struct \hyperlink{structcryptodma__t}{cryptodma\_\-t} {\bfseries dmardma}}
+\label{_n_a_n_d_8c_a50c6eb94ac4729e14e77e1234e9e7d80}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:fox.chao@gmail.com}{\tt fox.chao@gmail.com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{_n_a_n_d_8c_a1cd2b3355a11ab00c6b5b1db10d84698}{
+\index{NAND.c@{NAND.c}!NAND\_\-read\_\-request@{NAND\_\-read\_\-request}}
+\index{NAND\_\-read\_\-request@{NAND\_\-read\_\-request}!NAND.c@{NAND.c}}
+\subsubsection[{NAND\_\-read\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}int NAND\_\-read\_\-request (
+\begin{DoxyParamCaption}
+\item[{int}]{ start, }
+\item[{int}]{ cnt}
+\end{DoxyParamCaption}
+)}}
+\label{_n_a_n_d_8c_a1cd2b3355a11ab00c6b5b1db10d84698}
+NAND\_\-read\_\-request function requests series of pages for reading
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em start}]starting page \item[{\em cnt}]total page count \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+handle for this request 
+\end{DoxyReturn}
+\hypertarget{_n_a_n_d_8c_a2126a181f18ba373e0d90cd2b8559eec}{
+\index{NAND.c@{NAND.c}!NAND\_\-write\_\-request@{NAND\_\-write\_\-request}}
+\index{NAND\_\-write\_\-request@{NAND\_\-write\_\-request}!NAND.c@{NAND.c}}
+\subsubsection[{NAND\_\-write\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}int NAND\_\-write\_\-request (
+\begin{DoxyParamCaption}
+\item[{int}]{ start, }
+\item[{int}]{ cnt}
+\end{DoxyParamCaption}
+)}}
+\label{_n_a_n_d_8c_a2126a181f18ba373e0d90cd2b8559eec}
+NAND\_\-write\_\-request function requests series of pages for writing
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em start}]starting page \item[{\em cnt}]total page count \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+handle for this request 
+\end{DoxyReturn}

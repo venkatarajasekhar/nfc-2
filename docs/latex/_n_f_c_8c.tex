@@ -1,0 +1,71 @@
+\hypertarget{_n_f_c_8c}{
+\section{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/NFC.c File Reference}
+\label{_n_f_c_8c}\index{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/NFC.c@{/Users/fox/Projects/SoftASIC/NFC/Code/NAND/src/NFC.c}}
+}
+{\ttfamily \#include \char`\"{}NFC.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}pt/pt.h\char`\"{}}\par
+{\ttfamily \#include $<$string.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_n_f_c_8c_afa4bcdc394a9a9052321ec5e2b8fa2b0}{
+void {\bfseries NFC\_\-2addr} (uint16\_\-t addr)}
+\label{_n_f_c_8c_afa4bcdc394a9a9052321ec5e2b8fa2b0}
+
+\item 
+\hypertarget{_n_f_c_8c_a307321ae508edd1e77ec2900d8b806b0}{
+void {\bfseries NFC\_\-3addr} (uint32\_\-t addr)}
+\label{_n_f_c_8c_a307321ae508edd1e77ec2900d8b806b0}
+
+\item 
+\hypertarget{_n_f_c_8c_a132a294432c6cbfe52170afa0418294a}{
+void {\bfseries NFC\_\-4addr} (uint32\_\-t addr)}
+\label{_n_f_c_8c_a132a294432c6cbfe52170afa0418294a}
+
+\item 
+\hypertarget{_n_f_c_8c_a7060f01a98c68e317cc668677b77f628}{
+void {\bfseries NFC\_\-push} (uint8\_\-t ch)}
+\label{_n_f_c_8c_a7060f01a98c68e317cc668677b77f628}
+
+\item 
+\hypertarget{_n_f_c_8c_ac59f594119df77a079bf391e5ba5dd89}{
+uint8\_\-t {\bfseries NFC\_\-pop} (void)}
+\label{_n_f_c_8c_ac59f594119df77a079bf391e5ba5dd89}
+
+\item 
+\hypertarget{_n_f_c_8c_a5ad9a396f322d229b45fb3a93ac2870c}{
+uint16\_\-t {\bfseries NFC\_\-FMICFF\_\-read} (void)}
+\label{_n_f_c_8c_a5ad9a396f322d229b45fb3a93ac2870c}
+
+\item 
+void \hyperlink{_n_f_c_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}{NFC\_\-init} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_n_f_c_8c_aefcfa95a5d78a4971ada7116e28c4ab1}{
+int32\_\-t {\bfseries cmdff\_\-log} = 0}
+\label{_n_f_c_8c_aefcfa95a5d78a4971ada7116e28c4ab1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:fox.chao@gmail.com}{\tt fox.chao@gmail.com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{_n_f_c_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}{
+\index{NFC.c@{NFC.c}!NFC\_\-init@{NFC\_\-init}}
+\index{NFC\_\-init@{NFC\_\-init}!NFC.c@{NFC.c}}
+\subsubsection[{NFC\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void NFC\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_n_f_c_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}
+NFC\_\-init
+
+open and grow the simulated target files if necessary. 

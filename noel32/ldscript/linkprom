@@ -1,0 +1,162 @@
+/*  linkcmds
+ *
+ *  $Id: linkcmds,v 1.8.2.1 2000/05/24 17:06:38 joel Exp $
+ */
+
+OUTPUT_ARCH(sparc)
+
+__DYNAMIC  =  0;
+
+/*
+ * The memory map looks like this:
+ * +--------------------+ <- low memory
+ * | .text              |
+ * |        etext       |
+ * |        ctor list   | the ctor and dtor lists are for
+ * |        dtor list   | C++ support
+ * |        _endtext    |
+ * +--------------------+
+ * | .data              | initialized data goes here
+ * |        _sdata      |
+ * |        _edata      |
+ * +--------------------+
+ * | .bss               |
+ * |        __bss_start | start of bss, cleared by crt0
+ * |        _end        | start of heap, used by sbrk()
+ * +--------------------+
+ * |    heap space      |
+ * |        _ENDHEAP    |
+ * |    stack space     | 
+ * |        __stack     | top of stack
+ * +--------------------+ <- high memory
+ */
+
+
+/* Default values, can be overridden */
+
+_BOOT_ROM_SIZE   = 128K;
+_PROG_RAM_SIZE   = 128K;
+_STACK_RAM_SIZE  = 32K;
+
+_STACK_RAM_START = 0x20000000;
+_STACK_RAM_END   = _STACK_RAM_START + _STACK_RAM_SIZE;
+
+_BOOT_ROM_START  = 0x21000000;
+_BOOT_ROM_END    = _BOOT_ROM_START + _BOOT_ROM_SIZE;
+
+_PROG_RAM_START  = 0x21000000;
+_PROG_RAM_END    = _PROG_RAM_START + _PROG_RAM_SIZE;
+
+/*
+ *  Alternate names without leading _.
+ */
+
+BOOT_ROM_START = _BOOT_ROM_START;
+BOOT_ROM_SIZE  = _BOOT_ROM_SIZE;
+BOOT_ROM_END   = _BOOT_ROM_END;
+
+PROG_RAM_START = _PROG_RAM_START;
+PROG_RAM_SIZE  = _PROG_RAM_SIZE;
+PROG_RAM_END   = _PROG_RAM_END;
+
+STACK_RAM_START = _STACK_RAM_START;
+STACK_RAM_SIZE  = _STACK_RAM_SIZE;
+STACK_RAM_END   = _STACK_RAM_END;
+
+
+/* these are the maximum values */
+
+MEMORY
+{
+  boot_rom  : ORIGIN = 0x21000000, LENGTH = 128K
+  stack_ram : ORIGIN = 0x20000000, LENGTH = 32K
+  
+}
+
+SECTIONS
+{
+  .text   : {
+    CREATE_OBJECT_SYMBOLS
+    *(.text.start)
+    *(.text)
+     etext  =  .;
+    . = ALIGN (16);
+    *(.eh_frame)
+    . = ALIGN (16);
+    *(.gnu.linkonce.t*)
+     /* C++ constructors */
+     ___CTOR_LIST__ = .;
+     LONG((___CTOR_END__ - ___CTOR_LIST__) / 4 - 2)
+     *(SORT(.ctors.*))
+     *(.ctors)
+     LONG(0)
+     ___CTOR_END__ = .;
+     ___DTOR_LIST__ = .;
+     LONG((___DTOR_END__ - ___DTOR_LIST__) / 4 - 2)
+     *(SORT(.dtors.*))
+     *(.dtors)
+     LONG(0)
+     ___DTOR_END__ = .;
+    
+    *(.gnu.linkonce*)
+    *(.init)
+    *(.fini)
+    *(.lit)
+    *(.shdata)
+    . = ALIGN (16);
+     etext  =  .;
+  }  > boot_rom
+  .gcc_except_table   : {
+    *(.gcc_except_table)
+  }  > boot_rom
+  .data   : {
+    *(.data .data.* )
+    edata  =  .;
+    _edata  =  .;
+    __edata  =  .;
+     _rodata_start  =  .;
+    *(.rodata*)
+    *(.gnu.linkonce.r*)
+     _erodata = ALIGN( 0x10 ) ;
+  }  > stack_ram
+  .bss   :
+  {
+    . = ALIGN(0x8);
+    bss_start = .;
+    _bss_start = .;
+    __bss_start = .;
+    *(.bss .bss.* )
+    *(COMMON)
+  }  > stack_ram
+  . = ALIGN(0x8);
+  end = .;
+  _end = .;
+  __end = .;
+  __heap1 = .;
+  .jcr . (NOLOAD) : { *(.jcr) }
+  .stab 0 (NOLOAD) :
+  {
+    [ .stab ]
+  }
+  .stabstr 0 (NOLOAD) :
+  {
+    [ .stabstr ]
+  }
+  .debug           0 : { *(.debug) }
+  .line            0 : { *(.line) }
+  .debug_srcinfo   0 : { *(.debug_srcinfo) }
+  .debug_sfnames   0 : { *(.debug_sfnames) }
+  .debug_aranges   0 : { *(.debug_aranges) }
+  .debug_pubnames  0 : { *(.debug_pubnames) }
+  .debug_info      0 : { *(.debug_info) }
+  .debug_abbrev    0 : { *(.debug_abbrev) }
+  .debug_line      0 : { *(.debug_line) }
+  .debug_frame     0 : { *(.debug_frame) }
+  .debug_str       0 : { *(.debug_str) }
+  .debug_loc       0 : { *(.debug_loc) }
+  .debug_macinfo   0 : { *(.debug_macinfo) }
+  .debug_weaknames 0 : { *(.debug_weaknames) }
+  .debug_funcnames 0 : { *(.debug_funcnames) }
+  .debug_typenames 0 : { *(.debug_typenames) }
+  .debug_varnames  0 : { *(.debug_varnames) }
+}

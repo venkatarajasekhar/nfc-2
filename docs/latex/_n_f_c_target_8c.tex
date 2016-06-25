@@ -1,0 +1,554 @@
+\hypertarget{_n_f_c_target_8c}{
+\section{/Users/fox/Projects/NFC/Code/firmware/src/NFCTarget.c File Reference}
+\label{_n_f_c_target_8c}\index{/Users/fox/Projects/NFC/Code/firmware/src/NFCTarget.c@{/Users/fox/Projects/NFC/Code/firmware/src/NFCTarget.c}}
+}
+{\ttfamily \#include \char`\"{}NFC.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_n_f_c_target_8c_a22bc99afe35d0a875f303fbab732d456}{
+\#define {\bfseries ADDR\_\-RESET}~ADDR\_\-BASE}
+\label{_n_f_c_target_8c_a22bc99afe35d0a875f303fbab732d456}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a6aff75d02556fdd6998385321b822ab4}{
+\#define {\bfseries H2F\_\-CLR}~(1 $<$$<$ 0)}
+\label{_n_f_c_target_8c_a6aff75d02556fdd6998385321b822ab4}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ac0e4ced3c77838ee6e77812017680440}{
+\#define {\bfseries FTL\_\-CLR}~(1 $<$$<$ 1)}
+\label{_n_f_c_target_8c_ac0e4ced3c77838ee6e77812017680440}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ac69b82b84c19059e08f3d15b991f4693}{
+\#define {\bfseries BCHE\_\-CLR}~(1 $<$$<$ 2)}
+\label{_n_f_c_target_8c_ac69b82b84c19059e08f3d15b991f4693}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a41ffcf3c8a21f214669429f66fb4ef3a}{
+\#define {\bfseries FMC\_\-CLR}~(1 $<$$<$ 3)}
+\label{_n_f_c_target_8c_a41ffcf3c8a21f214669429f66fb4ef3a}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a6d7e99e1db569d7dc90dbbf0b5076f0b}{
+\#define {\bfseries FMI\_\-CLR}~(1 $<$$<$ 4)}
+\label{_n_f_c_target_8c_a6d7e99e1db569d7dc90dbbf0b5076f0b}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a77a64cc5690129101dc1becbdf11e70a}{
+\#define {\bfseries BCHD\_\-CLR}~(1 $<$$<$ 5)}
+\label{_n_f_c_target_8c_a77a64cc5690129101dc1becbdf11e70a}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a40c5599115b120d6645dce10d427374e}{
+\#define {\bfseries F2H\_\-CLR}~(1 $<$$<$ 6)}
+\label{_n_f_c_target_8c_a40c5599115b120d6645dce10d427374e}
+
+\item 
+\hypertarget{_n_f_c_target_8c_af0c22e23abc123457ae0a8257645cbed}{
+\#define {\bfseries DMAWFF\_\-CLR}~(1 $<$$<$ 8)}
+\label{_n_f_c_target_8c_af0c22e23abc123457ae0a8257645cbed}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aa581bd29439d59aa57730b13557613ec}{
+\#define {\bfseries H2FF\_\-CLR}~(1 $<$$<$ 9)}
+\label{_n_f_c_target_8c_aa581bd29439d59aa57730b13557613ec}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aa77a0d5b236572a734d849191f92d612}{
+\#define {\bfseries BCHEIFF\_\-CLR}~(1 $<$$<$ 10)}
+\label{_n_f_c_target_8c_aa77a0d5b236572a734d849191f92d612}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ab15448b9d1812a5e38cf349540beedb4}{
+\#define {\bfseries CMDFF\_\-CLR}~(1 $<$$<$ 11)}
+\label{_n_f_c_target_8c_ab15448b9d1812a5e38cf349540beedb4}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a43d15d9c57fe7b79bab5e319d6d73206}{
+\#define {\bfseries FMIFF\_\-CLR}~(1 $<$$<$ 12)}
+\label{_n_f_c_target_8c_a43d15d9c57fe7b79bab5e319d6d73206}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a16f7027870406ef43c9dda123d074baf}{
+\#define {\bfseries FMICPUFF\_\-CLR}~(1 $<$$<$ 13)}
+\label{_n_f_c_target_8c_a16f7027870406ef43c9dda123d074baf}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a58d9eb204444ac2942429d515d26d5ce}{
+\#define {\bfseries FMOFF\_\-CLR}~(1 $<$$<$ 14)}
+\label{_n_f_c_target_8c_a58d9eb204444ac2942429d515d26d5ce}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a2ad39ded4a24d9ffe3e12467ba828e02}{
+\#define {\bfseries DMARFF\_\-CLR}~(1 $<$$<$ 15)}
+\label{_n_f_c_target_8c_a2ad39ded4a24d9ffe3e12467ba828e02}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ae23c72caa94b1dc7a08268fc885c6fba}{
+\#define {\bfseries ADDR\_\-ENABLE}~(ADDR\_\-BASE + (1 $<$$<$ 2))}
+\label{_n_f_c_target_8c_ae23c72caa94b1dc7a08268fc885c6fba}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a41bc63e1d9b62703ad8de7470832ad82}{
+\#define {\bfseries DMAW\_\-ENB}~(1 $<$$<$ 0)}
+\label{_n_f_c_target_8c_a41bc63e1d9b62703ad8de7470832ad82}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a6144b3ddc3bd4488b25dbc5a74a3bf9d}{
+\#define {\bfseries AUX\_\-ENB}~(1 $<$$<$ 1)}
+\label{_n_f_c_target_8c_a6144b3ddc3bd4488b25dbc5a74a3bf9d}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a7d03b7f7b835d67a8c8bee9d56e8ded6}{
+\#define {\bfseries FTLWB\_\-ENB}~(1 $<$$<$ 2)}
+\label{_n_f_c_target_8c_a7d03b7f7b835d67a8c8bee9d56e8ded6}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a67998760ed7386c3c4a6ac6af42321d0}{
+\#define {\bfseries H2F\_\-ENB}~(1 $<$$<$ 3)}
+\label{_n_f_c_target_8c_a67998760ed7386c3c4a6ac6af42321d0}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a268178425c4b548797f3882625767cec}{
+\#define {\bfseries BCHE\_\-ENB}~(1 $<$$<$ 4)}
+\label{_n_f_c_target_8c_a268178425c4b548797f3882625767cec}
+
+\item 
+\hypertarget{_n_f_c_target_8c_acd7debf0d7096e2a71a0af64e76ebb56}{
+\#define {\bfseries BCHE\_\-BYPASS}~(1 $<$$<$ 5)}
+\label{_n_f_c_target_8c_acd7debf0d7096e2a71a0af64e76ebb56}
+
+\item 
+\hypertarget{_n_f_c_target_8c_af16ba90d0504c2916271f9ffcddfe15d}{
+\#define {\bfseries FMC\_\-ENB}~(1 $<$$<$ 6)}
+\label{_n_f_c_target_8c_af16ba90d0504c2916271f9ffcddfe15d}
+
+\item 
+\hypertarget{_n_f_c_target_8c_afb8111c1f882b1422b9c13db6905ba12}{
+\#define {\bfseries BCHD\_\-ENB}~(1 $<$$<$ 8)}
+\label{_n_f_c_target_8c_afb8111c1f882b1422b9c13db6905ba12}
+
+\item 
+\hypertarget{_n_f_c_target_8c_af96e2455350cbb31640b56ac032de04a}{
+\#define {\bfseries BCHD\_\-BYPASS}~(1 $<$$<$ 9)}
+\label{_n_f_c_target_8c_af96e2455350cbb31640b56ac032de04a}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a546d5df019a991645921aef7f4c17128}{
+\#define {\bfseries F2H\_\-ENB}~(1 $<$$<$ 10)}
+\label{_n_f_c_target_8c_a546d5df019a991645921aef7f4c17128}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a8ea8f39480f13d2ee7c0067f94a2fc22}{
+\#define {\bfseries FTLRN\_\-ENB}~(1 $<$$<$ 11)}
+\label{_n_f_c_target_8c_a8ea8f39480f13d2ee7c0067f94a2fc22}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a84f2a7b4368da542b59e6e1942f4a0e7}{
+\#define {\bfseries MERGE\_\-ENB}~(1 $<$$<$ 12)}
+\label{_n_f_c_target_8c_a84f2a7b4368da542b59e6e1942f4a0e7}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ac4a5d17752656ce89232a47669d20cfd}{
+\#define {\bfseries DMAR\_\-ENB}~(1 $<$$<$ 13)}
+\label{_n_f_c_target_8c_ac4a5d17752656ce89232a47669d20cfd}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a5b51a0490d51a6191fd250dddaec580e}{
+\#define {\bfseries LOOP\_\-ENB}~(1 $<$$<$ 15)}
+\label{_n_f_c_target_8c_a5b51a0490d51a6191fd250dddaec580e}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a2d3b86b663a1ad004583ce9654d783ca}{
+\#define {\bfseries ADDR\_\-MODE}~(ADDR\_\-BASE + (2 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a2d3b86b663a1ad004583ce9654d783ca}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aac9368dda6afa0b59e2c12a0b48c2c88}{
+\#define {\bfseries AMBA\_\-32}~(1 $<$$<$ 0)}
+\label{_n_f_c_target_8c_aac9368dda6afa0b59e2c12a0b48c2c88}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a319402388ea373e1c44c893ee1a35de9}{
+\#define {\bfseries MODE\_\-SYNC}~(1 $<$$<$ 1)}
+\label{_n_f_c_target_8c_a319402388ea373e1c44c893ee1a35de9}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ad4454fb84415c832d8dd753fd9b07d1b}{
+\#define {\bfseries MODE\_\-D16}~(1 $<$$<$ 2)}
+\label{_n_f_c_target_8c_ad4454fb84415c832d8dd753fd9b07d1b}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aec8a3894ad5c87c2cd20f6c681757b7f}{
+\#define {\bfseries PAGE\_\-SIZE}(x)~(x $<$$<$ 6)}
+\label{_n_f_c_target_8c_aec8a3894ad5c87c2cd20f6c681757b7f}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a33df3622b7aafa8e3051a40da4710450}{
+\#define {\bfseries PAGE\_\-SIZE\_\-MASK}~0xc0}
+\label{_n_f_c_target_8c_a33df3622b7aafa8e3051a40da4710450}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ad2c0210af313d75e756ab6326677b20e}{
+\#define {\bfseries LOW\_\-CLE1}~(1 $<$$<$ 16)}
+\label{_n_f_c_target_8c_ad2c0210af313d75e756ab6326677b20e}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a0edbaf7a84ac32bad3bb6632a358a474}{
+\#define {\bfseries LOW\_\-CLE2}~(1 $<$$<$ 17)}
+\label{_n_f_c_target_8c_a0edbaf7a84ac32bad3bb6632a358a474}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a30d45810109cf557f41e8f54a0e53a35}{
+\#define {\bfseries LOW\_\-ALE1}~(1 $<$$<$ 18)}
+\label{_n_f_c_target_8c_a30d45810109cf557f41e8f54a0e53a35}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a4ecae135bfd981cfba7ddbe5f1c035a3}{
+\#define {\bfseries LOW\_\-ALE2}~(1 $<$$<$ 19)}
+\label{_n_f_c_target_8c_a4ecae135bfd981cfba7ddbe5f1c035a3}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a11f9ab4394c72ed89906683794aa41b5}{
+\#define {\bfseries LOW\_\-RE1}~(1 $<$$<$ 20)}
+\label{_n_f_c_target_8c_a11f9ab4394c72ed89906683794aa41b5}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a9046c4959cb8509ecc7a1e3b038124d5}{
+\#define {\bfseries LOW\_\-RE2}~(1 $<$$<$ 21)}
+\label{_n_f_c_target_8c_a9046c4959cb8509ecc7a1e3b038124d5}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ad3caf80d8bb9d8d5f20fc9b4ea4b26dc}{
+\#define {\bfseries LOW\_\-WE1}~(1 $<$$<$ 22)}
+\label{_n_f_c_target_8c_ad3caf80d8bb9d8d5f20fc9b4ea4b26dc}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a680923b095e78c9e862e549afbbcd1b1}{
+\#define {\bfseries LOW\_\-WE2}~(1 $<$$<$ 23)}
+\label{_n_f_c_target_8c_a680923b095e78c9e862e549afbbcd1b1}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a4b361aedd7fbdd1ba29f9a9dfe1aa64e}{
+\#define {\bfseries LOW\_\-CE11\_\-14}~(1 $<$$<$ 24)}
+\label{_n_f_c_target_8c_a4b361aedd7fbdd1ba29f9a9dfe1aa64e}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a82b6a874ff8b43b2a7a4aaac83412341}{
+\#define {\bfseries LOW\_\-CE21\_\-24}~(1 $<$$<$ 28)}
+\label{_n_f_c_target_8c_a82b6a874ff8b43b2a7a4aaac83412341}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a93ae03cda0bf0bdca3e0fe3431c0a319}{
+\#define {\bfseries ADDR\_\-INT}~(ADDR\_\-BASE + (5 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a93ae03cda0bf0bdca3e0fe3431c0a319}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aba9444753384404568bd4c63d72fab54}{
+\#define {\bfseries CADDR\_\-INT\_\-ENB}~ADDR\_\-INT}
+\label{_n_f_c_target_8c_aba9444753384404568bd4c63d72fab54}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a1109da6a7164eb5676d5ec6fec5eed37}{
+\#define {\bfseries CADDR\_\-INT\_\-SRC}~(ADDR\_\-INT + 1)}
+\label{_n_f_c_target_8c_a1109da6a7164eb5676d5ec6fec5eed37}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aaf3dba22b670fff49ca930f083c99b1f}{
+\#define {\bfseries CADDR\_\-INT\_\-CLR}~(ADDR\_\-INT + 2)}
+\label{_n_f_c_target_8c_aaf3dba22b670fff49ca930f083c99b1f}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a03ed1cd9608bd29280041e06310167d4}{
+\#define {\bfseries ADDR\_\-DMA\_\-ENDCNT}~(ADDR\_\-BASE + (6 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a03ed1cd9608bd29280041e06310167d4}
+
+\item 
+\hypertarget{_n_f_c_target_8c_af2ee13df7d00abcf0e266128c2a3ec42}{
+\#define {\bfseries WADDR\_\-DMAW\_\-ENDCNT}~ADDR\_\-DMA\_\-ENDCNT}
+\label{_n_f_c_target_8c_af2ee13df7d00abcf0e266128c2a3ec42}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a86f190abe8024431d8e95b027ce1b1dc}{
+\#define {\bfseries WADDR\_\-DMAR\_\-ENDCNT}~(ADDR\_\-DMA\_\-ENDCNT + 2)}
+\label{_n_f_c_target_8c_a86f190abe8024431d8e95b027ce1b1dc}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ab48af80078ef668a9f0fd872b5f4be3e}{
+\#define {\bfseries ADDR\_\-AUX\_\-ENDCNT}~(ADDR\_\-BASE + (7 $<$$<$ 2))}
+\label{_n_f_c_target_8c_ab48af80078ef668a9f0fd872b5f4be3e}
+
+\item 
+\hypertarget{_n_f_c_target_8c_af1ca0bb279abc2e8716ff1c892bdb30a}{
+\#define {\bfseries WADDR\_\-AUX\_\-ENDCNT}~ADDR\_\-AUX\_\-ENDCNT}
+\label{_n_f_c_target_8c_af1ca0bb279abc2e8716ff1c892bdb30a}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a9b3f59349ac8cd5993271e079a2bad5e}{
+\#define {\bfseries WADDR\_\-H2F\_\-ENDCNT}~(ADDR\_\-AUX\_\-ENDCNT + 2)}
+\label{_n_f_c_target_8c_a9b3f59349ac8cd5993271e079a2bad5e}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ace3468e6db87048f3a2b5770c27e3c21}{
+\#define {\bfseries ADDR\_\-SAR}~(ADDR\_\-BASE + (8 $<$$<$ 2))}
+\label{_n_f_c_target_8c_ace3468e6db87048f3a2b5770c27e3c21}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ae8de133d2a09f598ce2d4b1d967ca756}{
+\#define {\bfseries WADDR\_\-AUX\_\-DATA\_\-SAR}~ADDR\_\-SAR}
+\label{_n_f_c_target_8c_ae8de133d2a09f598ce2d4b1d967ca756}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a1ffcd0b368b8cf7f503316d9f13ad3aa}{
+\#define {\bfseries WADDR\_\-DMA\_\-LIST\_\-SAR}~(ADDR\_\-SAR + 2)}
+\label{_n_f_c_target_8c_a1ffcd0b368b8cf7f503316d9f13ad3aa}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a4269c02abfc9e14e52dd976fef2ec9c7}{
+\#define {\bfseries ADDR\_\-MERGE}~(ADDR\_\-BASE + (9 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a4269c02abfc9e14e52dd976fef2ec9c7}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a1c0198583996665e03417be2c1db2bd8}{
+\#define {\bfseries WADDR\_\-SECTOR}~ADDR\_\-MERGE}
+\label{_n_f_c_target_8c_a1c0198583996665e03417be2c1db2bd8}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a821191eb87c6be84e46d239b093b757d}{
+\#define {\bfseries CADDR\_\-SPP}~(ADDR\_\-MERGE + 2)}
+\label{_n_f_c_target_8c_a821191eb87c6be84e46d239b093b757d}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ae45e89f0a9d596162f470d8c5308acbc}{
+\#define {\bfseries ADDR\_\-KN\_\-DATA}~(ADDR\_\-BASE + (0x0c $<$$<$ 2))}
+\label{_n_f_c_target_8c_ae45e89f0a9d596162f470d8c5308acbc}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a05b4d2e13be0afbb3ac5d0b5f57d8c05}{
+\#define {\bfseries WADDR\_\-KLEN\_\-DATA}~ADDR\_\-KN\_\-DATA}
+\label{_n_f_c_target_8c_a05b4d2e13be0afbb3ac5d0b5f57d8c05}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aff0512a4961f4a2b3fe3d3f784ef9cb4}{
+\#define {\bfseries WADDR\_\-NLEN\_\-DATA}~(ADDR\_\-KN\_\-DATA + 2)}
+\label{_n_f_c_target_8c_aff0512a4961f4a2b3fe3d3f784ef9cb4}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a8372c02603a9e1098a781df847cf8abc}{
+\#define {\bfseries ADDR\_\-TS\_\-DATA}~(ADDR\_\-BASE + (0x0d $<$$<$ 2))}
+\label{_n_f_c_target_8c_a8372c02603a9e1098a781df847cf8abc}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a709123ef2ab20d2d549655d1b31093ff}{
+\#define {\bfseries CADDR\_\-BCH\_\-ECR}~ADDR\_\-TS\_\-DATA}
+\label{_n_f_c_target_8c_a709123ef2ab20d2d549655d1b31093ff}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a0912233fce149f7fa0ac18d1f42e9d1b}{
+\#define {\bfseries WADDR\_\-BCH\_\-DSR}~(ADDR\_\-TS\_\-DATA + 2)}
+\label{_n_f_c_target_8c_a0912233fce149f7fa0ac18d1f42e9d1b}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a5db608013ff8f094ac7855dc7b2e3546}{
+\#define {\bfseries ADDR\_\-KN\_\-AUX}~(ADDR\_\-BASE + (0x0e $<$$<$ 2))}
+\label{_n_f_c_target_8c_a5db608013ff8f094ac7855dc7b2e3546}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a7a4ec3abfc7f921f610c8737aea4ce41}{
+\#define {\bfseries WADDR\_\-BCH\_\-LEN}~ADDR\_\-KN\_\-AUX}
+\label{_n_f_c_target_8c_a7a4ec3abfc7f921f610c8737aea4ce41}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a5f0dd8e5108a199964e40906f393b416}{
+\#define {\bfseries WADDR\_\-BCH\_\-TOT}~(ADDR\_\-KN\_\-AUX + 2)}
+\label{_n_f_c_target_8c_a5f0dd8e5108a199964e40906f393b416}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a56dd76321ffb454b9329b7f9b30c52cc}{
+\#define {\bfseries ADDR\_\-TS\_\-AUX}~(ADDR\_\-BASE + (0x0f $<$$<$ 2))}
+\label{_n_f_c_target_8c_a56dd76321ffb454b9329b7f9b30c52cc}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a24f7076bd9f433398c8705fdc6f63556}{
+\#define {\bfseries ADDR\_\-STAT0}~(ADDR\_\-BASE + (0x10 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a24f7076bd9f433398c8705fdc6f63556}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aab96f3b8722a2aeabe678ef2196fe3ae}{
+\#define {\bfseries DMAW\_\-DONE}~(1 $<$$<$ 0)}
+\label{_n_f_c_target_8c_aab96f3b8722a2aeabe678ef2196fe3ae}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a25bbfcc234c33e62527e05498cdbcbc5}{
+\#define {\bfseries BCHE\_\-DONE}~(1 $<$$<$ 1)}
+\label{_n_f_c_target_8c_a25bbfcc234c33e62527e05498cdbcbc5}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a12eab9a7480ff93ff54da9eb811c51e8}{
+\#define {\bfseries DMAR\_\-DONE}~(1 $<$$<$ 2)}
+\label{_n_f_c_target_8c_a12eab9a7480ff93ff54da9eb811c51e8}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ace8e9f52a20d2c81da38c01d4e9c3fff}{
+\#define {\bfseries ERROR\_\-EXCEED}~(1 $<$$<$ 3)}
+\label{_n_f_c_target_8c_ace8e9f52a20d2c81da38c01d4e9c3fff}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a80b8c1312bd1c9910675c03e4cfff66b}{
+\#define {\bfseries CMDFF\_\-2ND\_\-READ}~(1 $<$$<$ 16)}
+\label{_n_f_c_target_8c_a80b8c1312bd1c9910675c03e4cfff66b}
+
+\item 
+\hypertarget{_n_f_c_target_8c_abf418f21bd46ca2afdbc851959341f1e}{
+\#define {\bfseries CMDPTR\_\-2ND\_\-READ}~(1 $<$$<$ 17)}
+\label{_n_f_c_target_8c_abf418f21bd46ca2afdbc851959341f1e}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a276f7f3edc16eacee9705b0c257c8b06}{
+\#define {\bfseries CMDTBL\_\-2ND\_\-READ}~(1 $<$$<$ 18)}
+\label{_n_f_c_target_8c_a276f7f3edc16eacee9705b0c257c8b06}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a08a6e187c262208d9d86fcdb23445e30}{
+\#define {\bfseries ADDR\_\-DMAWFF\_\-SLOT}~(ADDR\_\-BASE + (0x11 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a08a6e187c262208d9d86fcdb23445e30}
+
+\item 
+\hypertarget{_n_f_c_target_8c_abf79d5bfe78fae2bc14a7a2841cd241e}{
+\#define {\bfseries WADDR\_\-DMAWFF\_\-SLOT\_\-COUNT}~ADDR\_\-DMAWFF\_\-SLOT}
+\label{_n_f_c_target_8c_abf79d5bfe78fae2bc14a7a2841cd241e}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ae9a43926acb98c34739ce397715afb04}{
+\#define {\bfseries WADDR\_\-DMAWFF\_\-DATA\_\-COUNT}~(ADDR\_\-DMAWFF\_\-SLOT + 2)}
+\label{_n_f_c_target_8c_ae9a43926acb98c34739ce397715afb04}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aad9d574824c8fccd568ab25f729e2693}{
+\#define {\bfseries ADDR\_\-DMARFF\_\-SLOT}~(ADDR\_\-BASE + (0x12 $<$$<$ 2))}
+\label{_n_f_c_target_8c_aad9d574824c8fccd568ab25f729e2693}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a764432653ad2dfb6acccdd9bfe6c203c}{
+\#define {\bfseries WADDR\_\-DMARFF\_\-SLOT\_\-COUNT}~ADDR\_\-DMARFF\_\-SLOT}
+\label{_n_f_c_target_8c_a764432653ad2dfb6acccdd9bfe6c203c}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aa7155340e6fdde7406271e6fbd1f7d28}{
+\#define {\bfseries WADDR\_\-DMARFF\_\-DATA\_\-COUNT}~(ADDR\_\-DMARFF\_\-SLOT + 2)}
+\label{_n_f_c_target_8c_aa7155340e6fdde7406271e6fbd1f7d28}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a806da44b489df24ff8bf0e5d7cae23c8}{
+\#define {\bfseries ADDR\_\-CMDFF\_\-SLOT}~(ADDR\_\-BASE + (0x13 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a806da44b489df24ff8bf0e5d7cae23c8}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a50af31056d61b74210562796c93a562b}{
+\#define {\bfseries WADDR\_\-CMDFF\_\-SLOT\_\-COUNT}~ADDR\_\-CMDFF\_\-SLOT}
+\label{_n_f_c_target_8c_a50af31056d61b74210562796c93a562b}
+
+\item 
+\hypertarget{_n_f_c_target_8c_aacfe54c12f3d120bc4867e9965789d73}{
+\#define {\bfseries WADDR\_\-CMDFF\_\-DATA\_\-COUNT}~(ADDR\_\-CMDFF\_\-SLOT + 2)}
+\label{_n_f_c_target_8c_aacfe54c12f3d120bc4867e9965789d73}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a26028a5cc85917e3ff3097844f638765}{
+\#define {\bfseries ADDR\_\-FMICFF\_\-SLOT}~(ADDR\_\-BASE + (0x14 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a26028a5cc85917e3ff3097844f638765}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a7d19b446934c801f975d8adadadd7713}{
+\#define {\bfseries WADDR\_\-FMICFF\_\-COUNT}~(ADDR\_\-FMICFF\_\-SLOT + 2)}
+\label{_n_f_c_target_8c_a7d19b446934c801f975d8adadadd7713}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a02873aa75ee2fd5e6ba4b5d35b1d1a72}{
+\#define {\bfseries ADDR\_\-STATE}~(ADDR\_\-BASE + (0x15 $<$$<$ 2))}
+\label{_n_f_c_target_8c_a02873aa75ee2fd5e6ba4b5d35b1d1a72}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a963bb1748a0120d4ba5c34ad839d6a5f}{
+\#define {\bfseries CADDR\_\-DMAW}}
+\label{_n_f_c_target_8c_a963bb1748a0120d4ba5c34ad839d6a5f}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a2f7444f1e6cddab9109bb7f83db01fc1}{
+\#define {\bfseries CADDR\_\-MUX}}
+\label{_n_f_c_target_8c_a2f7444f1e6cddab9109bb7f83db01fc1}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a4609a2fd16a5c27005c6783349f7aaf6}{
+\#define {\bfseries CADDR\_\-DMAR}}
+\label{_n_f_c_target_8c_a4609a2fd16a5c27005c6783349f7aaf6}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ac866efd46baa54cece0b814ce761f3db}{
+\#define {\bfseries CADDR\_\-FTL}}
+\label{_n_f_c_target_8c_ac866efd46baa54cece0b814ce761f3db}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a9aa92bcb0f39fc7efcefbc0d1eba6d40}{
+\#define {\bfseries ADDR\_\-CMDPTR}~(ADDR\_\-BASE + 0x200)}
+\label{_n_f_c_target_8c_a9aa92bcb0f39fc7efcefbc0d1eba6d40}
+
+\item 
+\hypertarget{_n_f_c_target_8c_abbaa5b45d9cb5b02f81087fa4847c5fe}{
+\#define {\bfseries ADDR\_\-CMDTBL}~(ADDR\_\-BASE + 0x300)}
+\label{_n_f_c_target_8c_abbaa5b45d9cb5b02f81087fa4847c5fe}
+
+\item 
+\hypertarget{_n_f_c_target_8c_ae0b087079329324c27b4cd6cfd155d53}{
+\#define {\bfseries ADDR\_\-FMICFF}~(ADDR\_\-BASE + 0x400)}
+\label{_n_f_c_target_8c_ae0b087079329324c27b4cd6cfd155d53}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a7b2dffa9a5f25ebe0b4c4cc2c1fb6454}{
+\#define {\bfseries ADDR\_\-DMAWFF}~(ADDR\_\-BASE + 0x100)}
+\label{_n_f_c_target_8c_a7b2dffa9a5f25ebe0b4c4cc2c1fb6454}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a31d9bc4503a0932b2680ddfb2ce46d0f}{
+\#define {\bfseries ADDR\_\-DMARFF}~(ADDR\_\-BASE + 0x200)}
+\label{_n_f_c_target_8c_a31d9bc4503a0932b2680ddfb2ce46d0f}
+
+\item 
+\hypertarget{_n_f_c_target_8c_a1d2e993b4c91583fc81bd8247a59643b}{
+\#define {\bfseries ADDR\_\-FTLRAM}~(ADDR\_\-BASE + 0x300)}
+\label{_n_f_c_target_8c_a1d2e993b4c91583fc81bd8247a59643b}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_n_f_c_target_8c_a7c90e989a593dde815628e9e241a4b2f}{mem2mem} (uint32\_\-t $\ast$dest, uint32\_\-t $\ast$src, uint32\_\-t n)
+\item 
+void \hyperlink{_n_f_c_target_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}{NFC\_\-init} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:fox.chao@gmail.com}{\tt fox.chao@gmail.com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{_n_f_c_target_8c_a7c90e989a593dde815628e9e241a4b2f}{
+\index{NFCTarget.c@{NFCTarget.c}!mem2mem@{mem2mem}}
+\index{mem2mem@{mem2mem}!NFCTarget.c@{NFCTarget.c}}
+\subsubsection[{mem2mem}]{\setlength{\rightskip}{0pt plus 5cm}void mem2mem (uint32\_\-t $\ast$ {\em dest}, \/  uint32\_\-t $\ast$ {\em src}, \/  uint32\_\-t {\em n})}}
+\label{_n_f_c_target_8c_a7c90e989a593dde815628e9e241a4b2f}
+mem2mem
+
+copy n elements of 32bits width data from memory to memory \hypertarget{_n_f_c_target_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}{
+\index{NFCTarget.c@{NFCTarget.c}!NFC\_\-init@{NFC\_\-init}}
+\index{NFC\_\-init@{NFC\_\-init}!NFCTarget.c@{NFCTarget.c}}
+\subsubsection[{NFC\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void NFC\_\-init (void)}}
+\label{_n_f_c_target_8c_a3361bdb6de27eebb1be3d2dd2ad1fe72}
+NFC\_\-init
+
+open and grow the simulated target files if necessary. 

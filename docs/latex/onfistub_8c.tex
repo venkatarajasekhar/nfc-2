@@ -1,0 +1,67 @@
+\hypertarget{onfistub_8c}{
+\section{/Users/fox/Projects/BFC/Code/firmware-\/git/src/onfistub.c File Reference}
+\label{onfistub_8c}\index{/Users/fox/Projects/BFC/Code/firmware-\/git/src/onfistub.c@{/Users/fox/Projects/BFC/Code/firmware-\/git/src/onfistub.c}}
+}
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include \char`\"{}onfi.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{onfistub_8c_a7d467c1d283fdfa1f2081ba1e0d01b6e}{
+\#define {\bfseries PAGE\_\-SIZE}~2048}
+\label{onfistub_8c_a7d467c1d283fdfa1f2081ba1e0d01b6e}
+
+\item 
+\hypertarget{onfistub_8c_ac1a7ceca1ee1655830e8f2df4c98ab08}{
+\#define {\bfseries TOTAL\_\-PAGES}~2097152ul}
+\label{onfistub_8c_ac1a7ceca1ee1655830e8f2df4c98ab08}
+
+\item 
+\hypertarget{onfistub_8c_a2a5c15a83b4f59a369d7c12900c63eb2}{
+\#define {\bfseries PAGES\_\-PER\_\-BLOCK}~64}
+\label{onfistub_8c_a2a5c15a83b4f59a369d7c12900c63eb2}
+
+\item 
+\hypertarget{onfistub_8c_a4f417489d9c3c243405dffcd9e29c218}{
+\#define {\bfseries TOTAL\_\-BYTES}~(PAGE\_\-SIZE $\ast$ TOTAL\_\-PAGES)}
+\label{onfistub_8c_a4f417489d9c3c243405dffcd9e29c218}
+
+\item 
+\hypertarget{onfistub_8c_a5559d5e7ba501e9762af5f203035df14}{
+\#define {\bfseries TOTAL\_\-BLOCKS}~(TOTAL\_\-PAGES / PAGES\_\-PER\_\-BLOCK)}
+\label{onfistub_8c_a5559d5e7ba501e9762af5f203035df14}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{onfistub_8c_a964f4260f3bb40eebc3d0f8f217e0084}{onfi\_\-init} (void)
+\item 
+\hypertarget{onfistub_8c_acb927e50caf95a2f12fe877c1499bc35}{
+int {\bfseries onfi\_\-read} (void)}
+\label{onfistub_8c_acb927e50caf95a2f12fe877c1499bc35}
+
+\item 
+\hypertarget{onfistub_8c_a8d452ff1fb0e6b7ed64c03e8d1945e8c}{
+int {\bfseries onfi\_\-write} (void)}
+\label{onfistub_8c_a8d452ff1fb0e6b7ed64c03e8d1945e8c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:fox.chao@gmail.com}{\tt fox.chao@gmail.com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{onfistub_8c_a964f4260f3bb40eebc3d0f8f217e0084}{
+\index{onfistub.c@{onfistub.c}!onfi\_\-init@{onfi\_\-init}}
+\index{onfi\_\-init@{onfi\_\-init}!onfistub.c@{onfistub.c}}
+\subsubsection[{onfi\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int onfi\_\-init (void)}}
+\label{onfistub_8c_a964f4260f3bb40eebc3d0f8f217e0084}
+onfi\_\-init
+
+open and grow the simulated target files if necessary. 

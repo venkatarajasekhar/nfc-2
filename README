@@ -1,0 +1,110 @@
+This file describes the firmware used to control NFC.
+
+## Architecture
+
+The firmware is consisted of several hierarchical layers illustrated below in bottom-up order:
+
+* register -- accessing registers and and platform dependent functions
+* NFC -- NFC inside SOC
+* ONFI -- ONFI commands
+* NAND -- Direct NAND access
+* FTL -- Flash Translation Layer manages LBA to PBA conversion.
+    - allow for both physical (RAW) and logic (LBA) accesses.
+* algorithms and managers -- various managers which represent our strategies.
+    - wear leveling code.
+    - proto-threading tasks.
+* application - top-level application
+    - responses to external (module/interface) requests
+    - house keeping tasks
+
+
+## Compilation
+
+All the customizable compilation options are stored in the top area of CMakeLists.txt.
+
+* Make a `build` folder in the project directory.
+* cd into the `build` folder you just created and you should stay here for all console tasks.
+* run the desired script in the `build` folder
+    - `../sparc.sh` to build for the target machine.
+    - `../host.sh` to build the host tools and simulations.
+    - `../darwin.sh` to build for Mac OS X host.
+
+* Now you could type `make` or `make <target>` to build the firmware or test applications.
+
+Check the top area of `CMakeLists.txt` to see if anything is needed to modify.
+
+## Execution
+
+For LEON3 platform:
+
+* `../jsrun.sh <app>` to test against `<app>` via JTAG connection. This script wraps jsmon's execution.
+* `../rom.sh <app>` to generate ROM image and debug information.
+
+
+## Project Tools
+
+**Must:**
+
+* cmake -- used to manage and generate builds.
+
+* ruby -- mainly used to make use of cmock and unity for unit testing purpose. You need to install ruby, rubygems, and rake
+
+    - if your system has installed `gem` command (check it by issue "`$ which ruby`") with ruby package, then check if it installed `rake` command (check it by "`$ gem list`").
+
+    - if not, follow the instructions on this [page](http://rubygems.org/pages/download) to install `gem` command, and then issue the following command to install `rake` command: "`$ gem install rake`"
+
+**Optional:**
+
+* git -- source code version control.
+
+
+## Modifications
+
+The firmware relies on an existing LEON3 application to provide the low level platform dependent supports. Currently I am using `mass.rar` for this purpose. And I've modified or duplicated some source files. Just use diff to check it out.
+
+
+## Generated Host Tools
+
+* fwpacker -- Reads a raw firmware binary image and get it packed.
+
+
+## Generated Target Binaries
+
+* loader
+  Loads firmware from Block 0.
+
+* firmware
+  The actual firmware which manages the FLASH access
+
+
+## Test Supports
+
+"cmock" was checked out from "vendor/cmock" folder and I've done a little modification to its subdirectory "vendor/unity" for generating correct "Runner" files. See the differences by issue the command `svn diff` in the directory "vendor/cmock/vendor/unity".
+
+The files in tests/unity" were copied from "vendor/cmock/vendor/unity/src" but I modified them to adapt LEON3 development environment. The main modifications are
+
+1 Replace "stdio" library with the specific `printf` library modified for LEON3
+2 Make the initialization clean for LEON3.
+3 Shorten output messages to decrease I/O latencies.
+
+* test_bed
+
+* test_NFC
+
+* test_DMA
+
+* test_FTL
+
+* test_as8
+
+* test_as16
+
+* test_sync8
+
+* test_sync16
+
+* test_NAND
+
+* test_firmware
+
+* test_loader
